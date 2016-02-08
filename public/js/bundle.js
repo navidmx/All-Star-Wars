@@ -172,7 +172,6 @@ Utils.prototype.checkCollision = function(object, targetName, once, cb){
 	if(!once){
 		once = false;
 	}
-
 	for (var vertexIndex = 0; vertexIndex < object.geometry.vertices.length; vertexIndex++)
 	{       
 	    var localVertex = object.geometry.vertices[vertexIndex].clone();
@@ -204,6 +203,7 @@ Utils.prototype.checkCollision = function(object, targetName, once, cb){
 	    }
 	}
 }
+
 
 Utils.prototype.cameraLookDir =  function(camera) {
 	/* http://stackoverflow.com/a/17286752/896112 */
@@ -456,10 +456,10 @@ function update(dt){
   	started = true;
   }
   // Check collision with lightsaber and enemy at every iteration
-  Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
+Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
   	if(result){
   		socket.emit('sendhit');
-  		result.velocity = new THREE.Vector3(-1, 0, 0);
+  		result.velocity = new THREE.Vector3(1, 0, 0);
   	}
   });
 
@@ -479,6 +479,7 @@ function update(dt){
   }
 
 }
+
 
 $(document).ready(function(){
 	$('.confirm-button').click(function(){
