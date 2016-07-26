@@ -58,7 +58,6 @@ volumeButton.addEventListener("click", function(){
 	}	
 	changeAudio();
 });
-var ranvar = 50;
 
 function changeAudio(){
 	if(!muted){
