@@ -112,6 +112,17 @@ function Hand(camera){
 
 module.exports = Hand;
 },{}],5:[function(require,module,exports){
+function Score(camera){
+	/* SCORE */
+	var scoreGeometry = new THREE.TextGeometry( text, { size: 10, height: 5, curveSegments: 6, font: "helvetiker", weight: "normal", style: "bold" }); 
+	var scoreMaterial = new THREE.MeshBasicMaterial({color: "#eac086"});
+	score = new THREE.Mesh(scoreGeometry, scoreMaterial);
+	score.position.set(20, 6, camera.position.z / 2);
+	return score;
+}
+
+module.exports = Score;
+},{}],6:[function(require,module,exports){
 function Lightsaber(){
 	/* LIGHTSABER MODEL */
 	var lsGeometry = new THREE.CylinderGeometry(0.4, 0.04, 30, 20);
@@ -129,7 +140,7 @@ function Lightsaber(){
 }
 
 module.exports = Lightsaber;
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 function Sky(textureLoader){
 	
 	var skyGeometry = new THREE.SphereGeometry(10000, 10000, 25, 25);
@@ -144,7 +155,7 @@ function Sky(textureLoader){
 }
 
 module.exports = Sky;
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 function Utils(){
 	this.raycaster = new THREE.Raycaster();
 	this.collidableMeshList = []; // All meshes raycaster cares about
@@ -510,4 +521,4 @@ socket.on('updateorientation', function(data){
 
 socket.on('updatemotion', function(data){
 });
-},{"../../assets/Corridor":1,"../../assets/Enemy":2,"../../assets/Floor":3,"../../assets/Hand":4,"../../assets/Lightsaber":5,"../../assets/Sky":6,"./utils":7}]},{},[8]);
+},{"../../assets/Corridor":1,"../../assets/Enemy":2,"../../assets/Floor":3,"../../assets/Hand":4,"../../assets/Score":5,"../../assets/Lightsaber":6,"../../assets/Sky":7,"./utils":8}]},{},[9]);
