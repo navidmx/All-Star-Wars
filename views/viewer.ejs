@@ -30,6 +30,12 @@
    				font-weight: 300;
    				color: white;
 			}
+			table, th, td {
+    			border-collapse: collapse;
+			}
+			th, td {
+    			padding: 15px;
+			}
 			a {
 				color: white;
 			}
@@ -77,14 +83,29 @@
 			<div class="align-item">
 				<center><img src="http://i.imgur.com/bqKDsnG.png" width="240" align="middle"></center>
 
-				<center><p>Enter the website below to take control of your lightsaber</p></center>
-                <br>
-				<center><span id="room-url"><%= roomURL %></span></center>
+				<center>
+				<p>Before you begin, select the lightsaber you would like to yield.</p>
+				<table style="width:50%">
+				  <tr>
+				    <tr><img src="http://i.imgur.com/u41tWa0.png"></tr>
+				    <tr><img src="http://i.imgur.com/KTG16r2.png"></tr>
+				    <tr><img src="http://i.imgur.com/skic3fe.png"></tr>
+				  </tr>
+				</table>
 
-				<center><div class="confirm-button">
-					<span><b>Connected!</b></span>
-					<span><br>Click here to begin.</br></span>
-				</div></center>
+				<p>Next, enter the website below to take control of your lightsaber.</p>
+				</center>
+                <br>
+				<center>
+				<span style="color:blue" id="room-url"><%= roomURL %></span>
+				</center>
+
+				<center>
+				<div class="confirm-button">
+				<span><b>Connected!</b></span>
+				<span><br>Click here to begin.</br></span>
+				</div>
+				</center>
 
 			</div>
 		</div>
