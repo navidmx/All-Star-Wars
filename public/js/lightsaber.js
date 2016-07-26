@@ -59,6 +59,12 @@ volumeButton.addEventListener("click", function(){
 	changeAudio();
 });
 
+var lightsaberColor = color("#ffaaf8"),
+
+colorButton.addEventListener("click", function(){
+	lightsaberColor = color("#13281c")
+});
+
 function changeAudio(){
 	if(!muted){
 		for(var i=0; i<hitFiles.length; i++){
