@@ -246,7 +246,7 @@ Utils.prototype.debugAxes = function(axisLength, scene){
 var u = new Utils();
 
 module.exports = u;
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 
 
 var socket = io();
@@ -278,6 +278,7 @@ var Floor = require('../../assets/Floor');
 var Corridor = require('../../assets/Corridor');
 var Hand = require('../../assets/Hand');
 var Lightsaber = require('../../assets/Lightsaber');
+var Score = require('../../assets/Score')
 var Enemy = require('../../assets/Enemy');
 var Utils = require('./utils');
 
