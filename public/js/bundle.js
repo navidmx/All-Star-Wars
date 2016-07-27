@@ -246,7 +246,7 @@ Utils.prototype.debugAxes = function(axisLength, scene){
 var u = new Utils();
 
 module.exports = u;
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 
 
 var socket = io();
@@ -264,6 +264,7 @@ var scene,
 	container,
 	domElement,
 	hand,
+	score,
 	enemy,
 	enemies,
 	lightsaber,
@@ -278,7 +279,7 @@ var Floor = require('../../assets/Floor');
 var Corridor = require('../../assets/Corridor');
 var Hand = require('../../assets/Hand');
 var Lightsaber = require('../../assets/Lightsaber');
-var Score = require('../../assets/Score')
+var Score = require('../../assets/Score');
 var Enemy = require('../../assets/Enemy');
 var Utils = require('./utils');
 
@@ -344,6 +345,8 @@ function setupScene(){
 	lightsaber = new Lightsaber();
 	hand.add(lightsaber);
 
+	score = new Score(camera);
+	scene.add(score);
 
 	Utils.collidableMeshList.push(lightsaber);
 
