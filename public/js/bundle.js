@@ -114,7 +114,7 @@ module.exports = Hand;
 },{}],5:[function(require,module,exports){
 function Score(){
 	/* SCORE */
-	var scoreGeometry = new THREE.TextGeometry( text, { size: 10, height: 5, curveSegments: 6, font: "helvetiker", weight: "normal", style: "bold" }); 
+	var scoreGeometry = new THREE.TextGeometry( "text", { size: 10, height: 5, curveSegments: 6, font: "helvetiker", weight: "normal", style: "bold" }); 
 	var scoreMaterial = new THREE.MeshBasicMaterial({color: "#eac086"});
 	score = new THREE.Mesh(scoreGeometry, scoreMaterial);
 	score.position.set(20, 6, 5);
@@ -145,7 +145,7 @@ function Sky(textureLoader){
 	
 	var skyGeometry = new THREE.SphereGeometry(10000, 10000, 25, 25);
 	var skyMaterial = new THREE.MeshBasicMaterial({
-		map: textureLoader.load('textures/sky.jpg'),
+		map: textureLoader.load('textures/sky1.jpg'),
 		side: THREE.BackSide});
 	var skyDome = new THREE.Mesh(skyGeometry, skyMaterial);
 	skyDome.rotateY(-Math.PI/2);
