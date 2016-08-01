@@ -80,6 +80,26 @@
         #room-url a {
             text-decoration: none;
         }
+        #timer {
+            position: absolute;
+            left: 25%;
+            top: 10%;
+        }
+        #score {
+            position: absolute;
+            right: 25%;
+            top: 10%;
+        }
+        #timertitle {
+            position: absolute;
+            left: 25%;
+            top: 3%
+        }
+        #scoretitle {
+            position: absolute;
+            right: 25%;
+            top: 3%;
+        }
     </style>
 </head>
 <body>
@@ -117,14 +137,12 @@
     </div>
     <div id="container">
         <!--Displaying/Updating Score or Timer above Canvas-->
-        <div style="position: absolute; z-index: 1">
+        <div style="z-index: 1">
             <div class="font">
-                <div id="timer">
-                    <p id="timer">0</p>
-                </div>
-                <div class="score">
-                    <p id="score">0</p>
-                </div>
+                <h4 id="timertitle">Timer</h4>
+                <p id="timer">0</p>
+                <h4 id="scoretitle">Score</h4>
+                <p id="score">0</p>
             </div>
             <!--Used to increment value of id="score"-->
             <script>
