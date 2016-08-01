@@ -117,9 +117,15 @@
     </div>
     <div id="container">
         <!--Displaying/Updating Score or Timer above Canvas-->
-        <div style="position: absolute; z-index: 1; left: 50%; top: 10%; width:50px; height:40px; background-color: blue;">
-            <p id="timer" style="size: 30px">0</p>
-            <p id="score" style="size: 30px">0</p>
+        <div style="position: absolute; z-index: 1">
+            <div class="font">
+                <div id="timer">
+                    <p id="timer">0</p>
+                </div>
+                <div class="score">
+                    <p id="score">0</p>
+                </div>
+            </div>
             <!--Used to increment value of id="score"-->
             <script>
                 var timer = setInterval(function(){increment()},1000);
