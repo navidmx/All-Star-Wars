@@ -87,7 +87,7 @@ function Corridor(textureLoader){
 module.exports = Corridor;
 },{}],2:[function(require,module,exports){
 function Enemy(){
-	var enemyGeometry = new THREE.CubeGeometry(4.5, 2, 2);
+	var enemyGeometry = new THREE.CylinderGeometry(2, 2, 5, 8);
 	var enemyMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.75, color: "#ff3346"});
 	var enemy = new THREE.Mesh(enemyGeometry, enemyMaterial);
 	return enemy;
