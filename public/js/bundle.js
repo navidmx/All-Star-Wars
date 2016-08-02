@@ -4,19 +4,21 @@ var score = 0;
 //also highlights the option selected, and dehighlights the rest
 color = "#00ffff"
 function changeBlue(){
-		document.getElementById("blueSaber").style["background-color"] = "blue";
+		document.getElementById("blueSaber").style["background-color"] = "whitesmoke";
+        document.getElementById("blueSaber").style["transition"] = "all 0.3s cubic-bezier(.25, .8, .25, 1)";
+        document.getElementById("blueSaber").style["transform"] = "transform: scale(1.1)";
 		document.getElementById("redSaber").style["background-color"] = "";
 		document.getElementById("greenSaber").style["background-color"] = "";
 		color = "#00ffff";
 }
 function changeGreen(){
-		document.getElementById("greenSaber").style["background-color"] = "green";
+		document.getElementById("greenSaber").style["background-color"] = "whitesmoke";
 		document.getElementById("blueSaber").style["background-color"] = "";
 		document.getElementById("redSaber").style["background-color"] = "";
 		color = "#05B805";
 } 
 function changeRed(){
-		document.getElementById("redSaber").style["background-color"] = "red";
+		document.getElementById("redSaber").style["background-color"] = "whitesmoke";
 		document.getElementById("blueSaber").style["background-color"] = "";
 		document.getElementById("greenSaber").style["background-color"] = "";
 		color = "#ff0000";
@@ -509,6 +511,11 @@ Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
 $(document).ready(function(){
 	$('.confirm-button').click(function(){
 		init();
+		var timer = setInterval(function(){increment()},1000);
+                function increment(){
+                    timer++;
+                    document.getElementById("timer").innerHTML = timer; 
+                }
 		animate();
 	});
 });
