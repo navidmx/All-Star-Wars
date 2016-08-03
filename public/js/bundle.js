@@ -128,7 +128,7 @@ module.exports = Floor;
 },{}],4:[function(require,module,exports){
 function Hand(camera){
 	/* HAND */
-	var handGeometry = new THREE.CylinderGeometry(1, 1, 7, 20);
+	var handGeometry = new THREE.CylinderGeometry(1, 1, 7, 7);
 	var handMaterial = new THREE.MeshBasicMaterial({color: "#545355"});
 	hand = new THREE.Mesh(handGeometry, handMaterial);
 	hand.position.set(15, 6, camera.position.z / 2);
@@ -139,7 +139,7 @@ module.exports = Hand;
 },{}],5:[function(require,module,exports){
 function Lightsaber(){
 	/* LIGHTSABER MODEL */
-	var lsGeometry = new THREE.CylinderGeometry(0.4, 0.04, 30, 20);
+	var lsGeometry = new THREE.CylinderGeometry(0.4, 0.4, 30, 20);
 	var lsMaterial = new THREE.MeshBasicMaterial({ color: "white" });
 	lightsaber = new THREE.Mesh( lsGeometry, lsMaterial );
 	lightsaber.position.setY(15);
