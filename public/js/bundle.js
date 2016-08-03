@@ -87,7 +87,7 @@ function Corridor(textureLoader){
 module.exports = Corridor;
 },{}],2:[function(require,module,exports){
 function Enemy(){
-	var enemyGeometry = new THREE.CylinderGeometry(2, 2, 5, 8);
+	var enemyGeometry = new THREE.CubeGeometry(4.5, 2, 2);
 	var enemyMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.75, color: "#ff3346"});
 	var enemy = new THREE.Mesh(enemyGeometry, enemyMaterial);
 	return enemy;
@@ -128,8 +128,8 @@ module.exports = Floor;
 },{}],4:[function(require,module,exports){
 function Hand(camera){
 	/* HAND */
-	var handGeometry = new THREE.CubeGeometry(3, 3, 3 );
-	var handMaterial = new THREE.MeshBasicMaterial({color: "#583b13"});
+	var handGeometry = new THREE.CylinderGeometry(0.4, 0.04, 30, 20);
+	var handMaterial = new THREE.MeshBasicMaterial({color: "#545355"});
 	hand = new THREE.Mesh(handGeometry, handMaterial);
 	hand.position.set(15, 6, camera.position.z / 2);
 	return hand;
