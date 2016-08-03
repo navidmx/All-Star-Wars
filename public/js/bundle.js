@@ -139,7 +139,7 @@ module.exports = Hand;
 },{}],5:[function(require,module,exports){
 function Lightsaber(){
 	/* LIGHTSABER MODEL */
-	var lsGeometry = new THREE.CylinderGeometry(0.4, 0.04, 30, 20);
+	var lsGeometry = new THREE.CylinderGeometry(1, 1, 5, 20);
 	var lsMaterial = new THREE.MeshBasicMaterial({ color: "white" });
 	lightsaber = new THREE.Mesh( lsGeometry, lsMaterial );
 	lightsaber.position.setY(15);
