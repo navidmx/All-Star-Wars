@@ -39,8 +39,6 @@ socket.on('viewready', function(data){
 			}
 		});
 	}
-    
-    changeAudio();
 });
 
 
