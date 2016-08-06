@@ -5,8 +5,6 @@ var score = 0;
 color = "#00ffff"
 function changeBlue(){
 		document.getElementById("blueSaber").style["background-color"] = "whitesmoke";
-        document.getElementById("blueSaber").style["transition"] = "all 0.3s cubic-bezier(.25, .8, .25, 1)";
-        document.getElementById("blueSaber").style["transform"] = "transform: scale(1.1)";
 		document.getElementById("redSaber").style["background-color"] = "";
 		document.getElementById("greenSaber").style["background-color"] = "";
 		color = "#00ffff";
@@ -148,7 +146,6 @@ function Lightsaber(){
 	var glow = new THREE.Mesh(glowGeometry, glowMaterial);
 
 	lightsaber.add(glow);
-
 	return lightsaber;
 }
 
@@ -510,12 +507,7 @@ Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
 
 $(document).ready(function(){
 	$('.confirm-button').click(function(){
-		init();
-		var timer = setInterval(function(){increment()},1000);
-                function increment(){
-                    timer++;
-                    document.getElementById("timer").innerHTML = timer; 
-                }
+		init()
 		animate();
 	});
 });
