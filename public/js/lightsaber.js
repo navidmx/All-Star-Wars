@@ -39,6 +39,8 @@ socket.on('viewready', function(data){
 			}
 		});
 	}
+    
+    changeAudio();
 });
 
 
@@ -59,13 +61,15 @@ volumeButton.addEventListener("click", function(){
 	changeAudio();
 });
 
-if(!muted){
-    for(var i=0; i<hitFiles.length; i++){
-        var newAudio = document.createElement("AUDIO");
-        newAudio.id = "audio";
-        newAudio.src= soundDir+hitFiles[Math.floor(Math.random() * 3)];
-        newAudio.load();
-        hitSounds.push(newAudio);
+function changeAudio(){
+    if(!muted){
+        for(var si=0; i<hitFiles.length; i++){
+            var newAudio = document.createElement("AUDIO");
+            newAudio.id = "audio";
+            newAudio.src= soundDir+hitFiles[Math.floor(Math.random() * 3)];
+            newAudio.load();
+            hitSounds.push(newAudio);
+        }
     }
 }
 
