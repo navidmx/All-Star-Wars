@@ -59,16 +59,14 @@ volumeButton.addEventListener("click", function(){
 	changeAudio();
 });
 
-function changeAudio(){
-	if(!muted){
-		for(var i=0; i<hitFiles.length; i++){
-			var newAudio = document.createElement("AUDIO");
-			newAudio.id = "audio";
-			newAudio.src= soundDir+hitFiles[Math.floor(Math.random() * 3)];
-			newAudio.load();
-			hitSounds.push(newAudio);
-		}
-	}
+if(!muted){
+    for(var i=0; i<hitFiles.length; i++){
+        var newAudio = document.createElement("AUDIO");
+        newAudio.id = "audio";
+        newAudio.src= soundDir+hitFiles[Math.floor(Math.random() * 3)];
+        newAudio.load();
+        hitSounds.push(newAudio);
+    }
 }
 
 socket.on('playsound', function(data){
