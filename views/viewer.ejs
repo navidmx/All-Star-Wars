@@ -126,7 +126,7 @@
             <br>
             <center>
                 <span style="color:#47dcff" id="room-url"><%= roomURL %></span>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+%= roomURL %>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+roomID>
             </center>
             <center>
                 <div class="confirm-button">
@@ -137,7 +137,7 @@
         </div>
     </div>
     <div id="container">
-        <!--Displaying/Updating Score or Timer above Canvas-->
+        <!--
         <div style="z-index: 1">
             <div class="font">
                 <h4 id="timertitle">Timer</h4>
@@ -145,7 +145,6 @@
                 <h4 id="scoretitle">Score</h4>
                 <p id="score">0</p>
             </div>
-            <!--Used to increment value of id="score"-->
             <script>
                 var timer = setInterval(function(){increment()},1000);
                 function increment(){
@@ -154,6 +153,7 @@
                 }
             </script>
         </div>
+        -->
     </div>
 </body>
 </html>
