@@ -132,11 +132,12 @@
                         cursor: pointer;
                     }
                 </style>
-                <p>Next, enter the website on a mobile device to begin.</p>
+                <p>Next, enter the website or scan the QR code on a mobile device to begin.</p>
             </center>
             <br>
             <center>
                 <span style="color:#47dcff" id="room-url"><%= roomURL %></span>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+%= roomURL %>
             </center>
             <center>
                 <div class="confirm-button">
