@@ -38,6 +38,7 @@
         th,
         td {
             border-collapse: collapse;
+            padding: 15px;
         }
         a {
             color: white;
@@ -56,13 +57,18 @@
             width: auto;
             height: auto;
             color: white;
-            background-color: #47dcff;
+            background-color: #22c6ef;
             display: none;
             margin: 10px;
+            transition: background-color .5s;
         }
         .confirm-button span {
             padding: 10px;
-            font-size: 32px;
+            font-size: 18px;
+        }
+        .confirm-button:hover {
+            background-color: rgba(34, 198, 239, 0.68);
+            cursor: pointer;
         }
         .landing {
             display: flex;
@@ -115,11 +121,12 @@
                         cursor: pointer;
                     }
                 </style>
-                <p>Next, enter the website on a mobile device to begin.</p>
+                <p>Next, enter the website or scan the QR code on a mobile device to begin.</p>
             </center>
             <br>
             <center>
                 <span style="color:#47dcff" id="room-url"><%= roomURL %></span>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+%= roomURL %>
             </center>
             <center>
                 <div class="confirm-button">
@@ -130,11 +137,23 @@
         </div>
     </div>
     <div id="container">
-        <!--Displaying/Updating Score above Canvas-->
+        <!--Displaying/Updating Score or Timer above Canvas-->
+        <div style="z-index: 1">
             <div class="font">
+                <h4 id="timertitle">Timer</h4>
+                <p id="timer">0</p>
                 <h4 id="scoretitle">Score</h4>
                 <p id="score">0</p>
             </div>
+            <!--Used to increment value of id="score"-->
+            <script>
+                var timer = setInterval(function(){increment()},1000);
+                function increment(){
+                    timer++;
+                    document.getElementById("timer").innerHTML = timer; 
+                }
+            </script>
+        </div>
     </div>
 </body>
 </html>
