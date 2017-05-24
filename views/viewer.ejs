@@ -99,6 +99,7 @@
         }
         #room-url {
             font-size: 26px;
+            padding-bottom: 25px;
         }
         #room-url a {
             text-decoration: none;
@@ -121,7 +122,7 @@
     <div class="landing">
         <div class="align-item">
             <center>
-                <img class="displayed" src="/textures/allstarwars.png" width="50%" align="middle">
+                <img class="displayed" src="/textures/allstarwars.png" width="40%" align="middle">
                 <p>First, select the lightsaber you would like to wield.</p>
 
                 <table style="width:50%">
@@ -141,7 +142,7 @@
             <br>
             <center>
                 <img id="qrcode" src="">
-                <span style="color:#47dcff" id="room-url"><div id="room-img"><%= roomURL %></div></span>
+                <span style="color:#47dcff" id="room-url"><div id="room-link"><%= roomURL %></div></span>
             </center>
             <center>
                 <div class="confirm-button">
@@ -171,7 +172,7 @@
         -->
     </div>
     <script>
-        var qrimg = document.getElementById("room-img").innerHTML; document.getElementById("qrcode").src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data="+qrimg;
+        var qrimg = document.getElementById("room-link").innerHTML; document.getElementById("qrcode").src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+qrimg;
         console.log(qrimg);
     </script>
 </body>
