@@ -4,21 +4,21 @@ var score = 0;
 //also highlights the option selected, and dehighlights the rest
 color = "#00ffff"
 function changeBlue(){
-		document.getElementById("blueSaber").style["background-color"] = "whitesmoke";
-		document.getElementById("redSaber").style["background-color"] = "";
-		document.getElementById("greenSaber").style["background-color"] = "";
+		document.getElementById("blueSaber").style["opacity"] = "1";
+		document.getElementById("redSaber").style["opacity"] = "0.5";
+		document.getElementById("greenSaber").style["opacity"] = "0.5";
 		color = "#00ffff";
 }
 function changeGreen(){
-		document.getElementById("greenSaber").style["background-color"] = "whitesmoke";
-		document.getElementById("blueSaber").style["background-color"] = "";
-		document.getElementById("redSaber").style["background-color"] = "";
+		document.getElementById("greenSaber").style["opacity"] = "1";
+		document.getElementById("blueSaber").style["opacity"] = "0.5";
+		document.getElementById("redSaber").style["opacity"] = "0.5";
 		color = "#05B805";
 } 
 function changeRed(){
-		document.getElementById("redSaber").style["background-color"] = "whitesmoke";
-		document.getElementById("blueSaber").style["background-color"] = "";
-		document.getElementById("greenSaber").style["background-color"] = "";
+		document.getElementById("redSaber").style["opacity"] = "1";
+		document.getElementById("blueSaber").style["opacity"] = "0.5";
+		document.getElementById("greenSaber").style["opacity"] = "0.5";
 		color = "#ff0000";
 }
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
