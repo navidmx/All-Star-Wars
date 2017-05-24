@@ -98,8 +98,6 @@
             border-style: solid;
         }
         #room-url {
-            font-size: 26px;
-            padding-bottom: 25px;
         }
         #room-url a {
             text-decoration: none;
@@ -142,7 +140,7 @@
             <br>
             <center>
                 <img id="qrcode" src="">
-                <span style="color:#47dcff" id="room-url"><div id="room-link"><%= roomURL %></div></span>
+                <span style="color:#47dcff; font-size: 26px;" id="room-url"><div style="padding-bottom:25px;" id="room-link"><%= roomURL %></div></span>
             </center>
             <center>
                 <div class="confirm-button">
@@ -172,7 +170,7 @@
         -->
     </div>
     <script>
-        var qrimg = document.getElementById("room-link").innerHTML; document.getElementById("qrcode").src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+qrimg;
+        var qrimg = document.getElementById("room-link").innerHTML; document.getElementById("qrcode").src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+qrimg;
         console.log(qrimg);
     </script>
 </body>
