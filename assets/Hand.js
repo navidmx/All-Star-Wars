@@ -1,5 +1,5 @@
 function Hand(camera){
-	/* HAND */
+	/* HANDLE */
 	var handGeometry = new THREE.SphereGeometry(1, 32, 32 );
 	var handMaterial = new THREE.MeshBasicMaterial({color: "#eac086"});
 	hand = new THREE.Mesh(handGeometry, handMaterial);

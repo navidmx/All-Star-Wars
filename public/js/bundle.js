@@ -522,7 +522,7 @@ socket.on('beginsetup', function(data){
 
 socket.on('setupcomplete', function(data){
 	$('.confirm-button').show();
-	$('#room-img').hide();
+	$('#room-link').hide();
 	$('#qrcode').hide();
 	socket.emit('viewready');
 
