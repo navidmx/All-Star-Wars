@@ -70,6 +70,9 @@
         .confirm-button:hover {
             background-color: rgba(34, 198, 239, 0.68);
             cursor: pointer;
+        }       
+        .lightsaber {
+            cursor: pointer;
         }
         .landing {
             display: flex;
@@ -122,7 +125,6 @@
             <center>
                 <img class="displayed" src="/textures/allstarwars.png" width="250px" align="middle">
                 <p>First, select the lightsaber you would like to wield.</p>
-
                 <table style="width:50%">
                     <tr>
                         <td class="saber" id="blueSaber"><img onClick="changeBlue()" class="lightsaber displayed" src="/textures/bluesaber.png"></td>
@@ -130,19 +132,9 @@
                         <td class="saber" id="redSaber"><img onClick="changeRed()" class="lightsaber displayed" src="/textures/redsaber.png"></td>
                     </tr>
                 </table>
-                <style>
-                    .lightsaber {
-                        cursor: pointer;
-                    }
-                </style>
                 <p>Next, enter the website or scan the QR code on a mobile device to begin.</p>
-            </center>
-            <br>
-            <center>
                 <img id="qrcode" src="">
                 <span style="color:#47dcff; font-size: 26px;" id="room-url"><div style="padding-bottom:25px;" id="room-link"><%= roomURL %></div></span>
-            </center>
-            <center>
                 <div class="confirm-button">
                     <span><b>CONNECTED!</b></span>
                     <span><br>Click here to begin.<br/></span>
