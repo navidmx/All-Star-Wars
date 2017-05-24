@@ -125,8 +125,8 @@
             </center>
             <br>
             <center>
-                <span style="color:#47dcff" id="room-url"><%= roomURL %></span>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+url>
+                <span style="color:#47dcff" id="room-url"><div id="room-img"><%= roomURL %></div></span>
+                <img id="qrcode" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+qrcode>
             </center>
             <center>
                 <div class="confirm-button">
@@ -156,8 +156,8 @@
         -->
     </div>
     <script>
-        var url = document.getElementById("room-url");
-        console.log(url);
+        var qrimg = document.getElementById("room-img"); document.getElementById("qrcode").src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+qrcode;
+        console.log(qrimg);
     </script>
 </body>
 </html>
