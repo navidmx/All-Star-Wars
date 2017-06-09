@@ -85,7 +85,7 @@ function Corridor(textureLoader){
 module.exports = Corridor;
 },{}],2:[function(require,module,exports){
 function Enemy(){
-	var enemyGeometry = new THREE.CylinderGeometry(.7, .7, 5, 12);
+	var enemyGeometry = new THREE.CylinderGeometry(.9, .9, 4, 12);
 	var enemyMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.75, color: "#ff3346"});
 	var enemy = new THREE.Mesh(enemyGeometry, enemyMaterial);
     enemy.rotateZ(Math.PI/2);
@@ -112,7 +112,6 @@ function Floor(textureLoader, renderer) {
 		shading: THREE.FlatShading,
 		map: floorTexture
 	});
-
 
 	// Floor Geometry
 	var floorGeometry = new THREE.PlaneGeometry(500,500);
