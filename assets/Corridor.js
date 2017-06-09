@@ -2,7 +2,7 @@ function Corridor(textureLoader){
 
 	var corridor = new THREE.Object3D();
 
-	var wallGeometry = new THREE.PlaneGeometry(100, 250);
+	var wallGeometry = new THREE.PlaneGeometry(100, 150);
 	
 	var wallTexture = textureLoader.load( "/textures/wall_deathstar.jpg" );
 	wallTexture.wrapS = THREE.RepeatWrapping;
