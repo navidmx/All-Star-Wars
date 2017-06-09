@@ -47,7 +47,7 @@ function Corridor(textureLoader){
 
 	var doorGeometry = new THREE.PlaneGeometry(70, 150);
 
-	var doorTexture = textureLoader.load( "/textures/door_metal.jpg" );
+	var doorTexture = textureLoader.load( "/textures/floor_metal.jpg" );
 	doorTexture.wrapS = THREE.RepeatWrapping;
 	doorTexture.wrapT = THREE.RepeatWrapping;
 	doorTexture.repeat.set(5, 5);
@@ -85,9 +85,10 @@ function Corridor(textureLoader){
 module.exports = Corridor;
 },{}],2:[function(require,module,exports){
 function Enemy(){
-	var enemyGeometry = new THREE.CubeGeometry(4.5, 2, 2);
+	var enemyGeometry = new THREE.CylinderGeometry(.9, .9, 4, 12);
 	var enemyMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.75, color: "#ff3346"});
 	var enemy = new THREE.Mesh(enemyGeometry, enemyMaterial);
+    enemy.rotateZ(Math.PI/2);
 	return enemy;
 }
 
@@ -112,7 +113,6 @@ function Floor(textureLoader, renderer) {
 		map: floorTexture
 	});
 
-
 	// Floor Geometry
 	var floorGeometry = new THREE.PlaneGeometry(500,500);
 	floor = new THREE.Mesh(floorGeometry, floorMaterial);
@@ -125,7 +125,7 @@ function Floor(textureLoader, renderer) {
 module.exports = Floor;
 },{}],4:[function(require,module,exports){
 function Hand(camera){
-	/* HAND */
+	/* HANDLE */
 	var handGeometry = new THREE.CylinderGeometry(.7, .7, 6, 7);
 	var handMaterial = new THREE.MeshBasicMaterial({color: "#545355"});
 	hand = new THREE.Mesh(handGeometry, handMaterial);
@@ -155,7 +155,7 @@ function Sky(textureLoader){
 	
 	var skyGeometry = new THREE.SphereGeometry(10000, 10000, 25, 25);
 	var skyMaterial = new THREE.MeshBasicMaterial({
-		map: textureLoader.load('textures/sky1.jpg'),
+		map: textureLoader.load('textures/floor_metal.jpg'),
 		side: THREE.BackSide});
 	var skyDome = new THREE.Mesh(skyGeometry, skyMaterial);
 	skyDome.rotateY(-Math.PI/2);
@@ -329,6 +329,8 @@ function init(){
 
 	$('.landing').hide();
 	$('.confirm-button').hide();
+    $("#score").fadeIn(500);
+    $("#scoretitle").fadeIn(500);
 	container.appendChild(domElement);
 	domElement.addEventListener('click', fullscreen, false);
 	setupScene();
