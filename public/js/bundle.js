@@ -85,7 +85,7 @@ function Corridor(textureLoader){
 module.exports = Corridor;
 },{}],2:[function(require,module,exports){
 function Enemy(){
-	var enemyGeometry = new THREE.CylinderGeometry(1, 1, 5, 12);
+	var enemyGeometry = new THREE.CylinderGeometry(.7, .7, 5, 12);
 	var enemyMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.75, color: "#ff3346"});
 	var enemy = new THREE.Mesh(enemyGeometry, enemyMaterial);
     enemy.rotateZ(Math.PI/2);
@@ -330,6 +330,8 @@ function init(){
 
 	$('.landing').hide();
 	$('.confirm-button').hide();
+    $("#score").fadeIn(500);
+    $("#scoretitle").fadeIn(500);
 	container.appendChild(domElement);
 	domElement.addEventListener('click', fullscreen, false);
 	setupScene();
@@ -510,8 +512,6 @@ $(document).ready(function(){
 	$('.confirm-button').click(function(){
 		init()
 		animate();
-        $("#score").fadeIn(500);
-        $("#scoretitle").fadeIn(500);
 	});
 });
 
