@@ -47,7 +47,7 @@ function Corridor(textureLoader){
 
 	var doorGeometry = new THREE.PlaneGeometry(70, 150);
 
-	var doorTexture = textureLoader.load( "/textures/door_metal.jpg" );
+	var doorTexture = textureLoader.load( "/textures/floor_metal.jpg" );
 	doorTexture.wrapS = THREE.RepeatWrapping;
 	doorTexture.wrapT = THREE.RepeatWrapping;
 	doorTexture.repeat.set(5, 5);
@@ -155,7 +155,7 @@ function Sky(textureLoader){
 	
 	var skyGeometry = new THREE.SphereGeometry(10000, 10000, 25, 25);
 	var skyMaterial = new THREE.MeshBasicMaterial({
-		map: textureLoader.load('textures/sky1.jpg'),
+		map: textureLoader.load('textures/floor_metal.jpg'),
 		side: THREE.BackSide});
 	var skyDome = new THREE.Mesh(skyGeometry, skyMaterial);
 	skyDome.rotateY(-Math.PI/2);
