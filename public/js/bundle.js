@@ -327,24 +327,23 @@ function init(){
 		controls = new DeviceOrientationController(camera, renderer.domElement);
 		controls.connect();
 	}
-
+    //Hide the landing page, display timer and score
 	$('.landing').fadeOut(100);
 	$('.confirm-button').fadeOut(100);
     $("#score").fadeIn(500);
     $("#scoretitle").fadeIn(500);
     $("#timer").fadeIn(500);
     $("#timertitle").fadeIn(500);
-    setInterval(countdown,1000);
+    //Count down every second for timer
+    setInterval(function(){
+        if (timer > 0){
+            timer--;
+            document.getElementById("timer").innerHTML = timer; 
+        }
+    },1000);
 	container.appendChild(domElement);
 	domElement.addEventListener('click', fullscreen, false);
 	setupScene();
-}
-    
-function countdown(){
-    if (timer > 0){
-        timer--;
-        document.getElementById("timer").innerHTML = timer; 
-    }
 }
 
 function setupScene(){
@@ -520,8 +519,8 @@ Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
 
 $(document).ready(function(){
 	$('.confirm-button').click(function(){
-		init()
 		animate();
+		setTimeout(init,5000);
 	});
 });
 
