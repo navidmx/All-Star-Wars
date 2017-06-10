@@ -1,26 +1,3 @@
-<?php
-
-    function debug( $data ) {
-    $output = $data;
-    if ( is_array( $output ) )
-        $output = implode( ',', $output);
-        echo "<script>console.log( $output );</script>";
-    }
-
-    $servername = "us-cdbr-iron-east-03.cleardb.net";
-    $username = "bb1668e0d5f170";
-    $password = "85138442";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-    debug("Connected successfully");
-?>
-
 <html>
 <head>
     <!-- FIX BUTTON -->
@@ -36,6 +13,7 @@
     <script src="/libs/StereoEffect.js"></script>
     <script src="/libs/jquery-2.1.4.min.js"></script>
     <script src="/js/bundle.js"></script>
+    <script src="/js/mysql.js"></script>
     <script>
         var isMobile;
         isMobile = false;
