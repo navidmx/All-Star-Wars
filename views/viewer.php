@@ -170,7 +170,6 @@
     </div>
     <script>
         var qrimg = document.getElementById("room-link").innerHTML; document.getElementById("qrcode").src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+qrimg;
-        console.log(qrimg);
     </script>
 </body>
 </html>
