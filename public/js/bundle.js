@@ -1,5 +1,6 @@
 //Makes score an integer
 var score = 0;
+var timer = 60;
 //Modifies color of the lightsaber based on option clicked (default is blue)
 //also highlights the option selected, and dehighlights the rest
 color = "#00ffff"
@@ -155,7 +156,7 @@ function Sky(textureLoader){
 	
 	var skyGeometry = new THREE.SphereGeometry(10000, 10000, 25, 25);
 	var skyMaterial = new THREE.MeshBasicMaterial({
-		map: textureLoader.load('textures/floor_metal.jpg'),
+		map: textureLoader.load('textures/sky.jpg'),
 		side: THREE.BackSide});
 	var skyDome = new THREE.Mesh(skyGeometry, skyMaterial);
 	skyDome.rotateY(-Math.PI/2);
@@ -327,13 +328,23 @@ function init(){
 		controls.connect();
 	}
 
-	$('.landing').hide();
-	$('.confirm-button').hide();
+	$('.landing').fadeOut(100);
+	$('.confirm-button').fadeOut(100);
     $("#score").fadeIn(500);
     $("#scoretitle").fadeIn(500);
+    $("#timer").fadeIn(500);
+    $("#timertitle").fadeIn(500);
+    setInterval(countdown,1000);
 	container.appendChild(domElement);
 	domElement.addEventListener('click', fullscreen, false);
 	setupScene();
+}
+    
+function countdown(){
+    if (timer > 0){
+        timer--;
+        document.getElementById("timer").innerHTML = timer; 
+    }
 }
 
 function setupScene(){

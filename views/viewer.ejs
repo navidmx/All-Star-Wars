@@ -145,22 +145,12 @@
     <div id="container">
         <div style="z-index: 1">
             <div class="font">
-<!--
-                <h4 id="timertitle">Timer</h4>
-                <p id="timer">0</p>
--->
+                <h4 id="timertitle" style="display:none;">Timer</h4>
+                <p id="timer" style="display:none;">60</p>
                 <h4 id="scoretitle" style="display:none;">Score</h4>
                 <p id="score" style="display:none;">0</p>
             </div>
-            <script>
-                var timer = setInterval(function(){increment()},1000);
-                function increment(){
-                    timer++;
-                    document.getElementById("timer").innerHTML = timer; 
-                }
-            </script>
         </div>
-        
     </div>
     <script>
         var qrimg = document.getElementById("room-link").innerHTML; document.getElementById("qrcode").src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+qrimg;
