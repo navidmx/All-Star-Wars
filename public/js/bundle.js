@@ -332,12 +332,14 @@ function init(){
     $("#timer").fadeIn(500);
     $("#timertitle").fadeIn(500);
     //Count down every second for timer
-    setInterval(function(){
-        if (timer > 0){
-            timer--;
-            document.getElementById("timer").innerHTML = timer; 
-        }
-    },1000);
+    setTimeout(function(){
+        setInterval(function(){
+            if (timer > 0){
+                timer--;
+                document.getElementById("timer").innerHTML = timer; 
+            }
+        },1000);
+    },5000);
 	container.appendChild(domElement);
 	domElement.addEventListener('click', fullscreen, false);
 	setupScene();
@@ -372,6 +374,8 @@ function setupScene(){
 	// AXIS 
 	var axis = new THREE.AxisHelper(200);
     //scene.add(axis);
+    
+    scene.add(hand);
 
     requestAnimationFrame(animate);
 }
