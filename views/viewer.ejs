@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+
+    function debug( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+        $output = implode( ',', $output);
+        echo "<script>console.log( $output );</script>";
+    }
+
+    $servername = "us-cdbr-iron-east-03.cleardb.net";
+    $username = "bb1668e0d5f170";
+    $password = "85138442";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    debug("Connected successfully");
+?>
+
+<html>
 <head>
     <!-- FIX BUTTON -->
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
