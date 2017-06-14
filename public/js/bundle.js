@@ -3,24 +3,30 @@ var score = 0;
 var timer = 60;
 //Modifies color of the lightsaber based on option clicked (default is blue)
 //also highlights the option selected, and dehighlights the rest
-color = "#00ffff"
+var lightsaberColor = "#00ffff";
+var enemyColor = "#ff3346";
 function changeBlue(){
 		document.getElementById("blueSaber").style["opacity"] = "1";
 		document.getElementById("redSaber").style["opacity"] = "0.5";
 		document.getElementById("greenSaber").style["opacity"] = "0.5";
 		color = "#00ffff";
+        lightsaberColor = "#00ffff";
+        enemyColor = "#ff3346";
 }
 function changeGreen(){
 		document.getElementById("greenSaber").style["opacity"] = "1";
 		document.getElementById("blueSaber").style["opacity"] = "0.5";
 		document.getElementById("redSaber").style["opacity"] = "0.5";
 		color = "#05B805";
+        lightsaberColor = "#05B805";
+        enemyColor = "#ff3346";
 } 
 function changeRed(){
 		document.getElementById("redSaber").style["opacity"] = "1";
 		document.getElementById("blueSaber").style["opacity"] = "0.5";
 		document.getElementById("greenSaber").style["opacity"] = "0.5";
-		color = "#ff0000";
+		lightsaberColor = "#ff0000";
+        enemyColor = "#00ffff";
 }
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 function Corridor(textureLoader){
@@ -87,7 +93,7 @@ module.exports = Corridor;
 },{}],2:[function(require,module,exports){
 function Enemy(){
 	var enemyGeometry = new THREE.CylinderGeometry(.9, .9, 4, 12);
-	var enemyMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.75, color: "#ff3346"});
+	var enemyMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.75, color: enemyColor});
 	var enemy = new THREE.Mesh(enemyGeometry, enemyMaterial);
     enemy.rotateZ(Math.PI/2);
 	return enemy;
@@ -143,7 +149,7 @@ function Lightsaber(){
 	lightsaber = new THREE.Mesh( lsGeometry, lsMaterial );
 	lightsaber.position.setY(15);
 	var glowGeometry = new THREE.CylinderGeometry(0.5, 0.5, 30, 20);
-	var glowMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.5, color: color});
+	var glowMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.5, color: lightsaberColor});
 	var glow = new THREE.Mesh(glowGeometry, glowMaterial);
 
 	lightsaber.add(glow);
@@ -485,6 +491,10 @@ function update(dt){
   	setupGame();
   	started = true;
   }
+    
+    // stores urls of all hit sounds
+    var hitSounds = ["/sounds/hit1.wav", "/sounds/hit2.wav", "/sounds/hit3.wav", "/sounds/hit4.wav"];
+    
   // Check collision with lightsaber and enemy at every iteration
   //ALSO updates "score" to document each time enemy is hit
 Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
@@ -493,6 +503,9 @@ Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
   		result.velocity = new THREE.Vector3(1, 0, 0);
   		score++;
   		document.getElementById("score").innerHTML = score;
+        // play random hit sound when deflecting
+        var hitSound = new Audio(hitSounds[Math.floor(Math.random() * 4)]);
+        hitSound.play();
   	}
   });
 
