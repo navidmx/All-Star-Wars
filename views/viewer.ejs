@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <!-- FIX BUTTON -->
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -13,6 +14,7 @@
     <script src="/libs/StereoEffect.js"></script>
     <script src="/libs/jquery-2.1.4.min.js"></script>
     <script src="/js/bundle.js"></script>
+    <script src="/js/mysql.js"></script>
     <script>
         var isMobile;
         isMobile = false;
@@ -117,6 +119,23 @@
             right: 15%;
             top: 3%;
         }
+        #intromessage{
+            z-index: 1;
+            position: absolute;
+            right: 15%;
+            top: 20%;
+        }
+        #outromessage{
+            z-index: 1;
+            position: absolute;
+            right: 15%;
+            top: 40%;
+        }
+        .statbar{
+            z-index: 1;
+            position: absolute;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -145,26 +164,18 @@
     <div id="container">
         <div style="z-index: 1">
             <div class="font">
-<!--
-                <h4 id="timertitle">Timer</h4>
-                <p id="timer">0</p>
--->
                 <h4 id="scoretitle" style="display:none;">Score</h4>
                 <p id="score" style="display:none;">0</p>
+                <p id="intromessage" style="display: none">INTRO</p>
+                <p id="outromessage" style="display: none">OUTRO</p>
+                <h4 class="statbar" id="timertitle" style="left: 15%; top: 3%;">Timer</h4>
+                <p class="statbar" id="timer" style="left: 15%; top: 10%;">0</p>
+                <h4 class="statbar" id="scoretitle" style="right: 15%; top: 3%;">Score</h4>
+                <p class="statbar" id="score" style="right: 15%; top: 10%;">0</p>
             </div>
-            <script>
-                var timer = setInterval(function(){increment()},1000);
-                function increment(){
-                    timer++;
-                    document.getElementById("timer").innerHTML = timer; 
-                }
-            </script>
         </div>
-        
     </div>
     <script>
         var qrimg = document.getElementById("room-link").innerHTML; document.getElementById("qrcode").src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+qrimg;
-        console.log(qrimg);
     </script>
 </body>
-</html>
