@@ -49,19 +49,19 @@ var muted = false,
 	audio = new Audio();
 	soundDir  = "/sounds/",
 	hitFiles = ["hit1.wav", "hit2.wav", "hit3.wav", "hit4.wav"],
-	hitSounds = [];
+	hitSounds = ["/sounds/hit1.wav", "/sounds/hit2.wav", "/sounds/hit3.wav", "/sounds/hit4.wav"];
 
-volumeButton.addEventListener("click", function(){
-	if(muted){
-		volumeButton.className = volumeClass;
-		muted = false;
-	}	
-	changeAudio();
-});
+// volumeButton.addEventListener("click", function(){
+// 	if(muted){
+// 		volumeButton.className = volumeClass;
+// 		muted = false;
+// 	}	
+// 	changeAudio();
+// });
 
 function changeAudio(){
     if(!muted){
-        for(var si=0; i<hitFiles.length; i++){
+        for(var i=0; i<hitFiles.length; i++){
             var newAudio = document.createElement("AUDIO");
             newAudio.id = "audio";
             newAudio.src= soundDir+hitFiles[Math.floor(Math.random() * 3)];
