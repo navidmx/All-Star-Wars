@@ -4,7 +4,7 @@ var score = 0;
 //also highlights the option selected, and dehighlights the rest
 lightsaberColor = "#00ffff";
 enemyColor = "#ff3346";
-var timer = 60;
+var timer = 65;
 //Modifies color of the lightsaber based on option clicked (default is blue)
 //also highlights the option selected, and dehighlights the rest
 var lightsaberColor = "#00ffff";
@@ -337,14 +337,22 @@ function init(){
 	$('.confirm-button').fadeOut(100);
     $("#score").fadeIn(500);
     $("#scoretitle").fadeIn(500);
-    $("#timer").fadeIn(500);
-    $("#timertitle").fadeIn(500);
     //Count down every second for timer
     setTimeout(function(){
         setInterval(function(){
             if (timer > 0){
                 timer--;
-                document.getElementById("timer").innerHTML = timer; 
+                document.getElementById("timer").innerHTML = timer;
+
+                // hide intro message at certain time
+                if (timer == 60){
+                    $("#timer").fadeIn(500);
+                    $("#timertitle").fadeIn(500);
+                    $("#introMessage").fadeOut(500);
+                } else if(timer == 0){
+                    // play outro message
+                    playoutroMessage();
+                }
             }
         },1000);
     },5000);
@@ -386,6 +394,20 @@ function setupScene(){
     scene.add(hand);
 
     requestAnimationFrame(animate);
+
+    // Show intro message
+    playintroMessage();
+
+}
+
+// Intro message function
+function playintroMessage() {
+    $("#introMessage").fadeIn(500);
+}
+
+// Outro message function
+function playoutroMessage(){
+    $("#outroMessage").fadeIn(500);
 }
 
 function setupGame() {
@@ -507,9 +529,6 @@ Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
         // play random hit sound when deflecting
         var hitSound = new Audio(hitSounds[Math.floor(Math.random() * 4)]);
         hitSound.play();
-
-        $("#intromessage").fadeIn(500);
-        $("#outromessage").fadeIn(500);
   	}
   });
 
