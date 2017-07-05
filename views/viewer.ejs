@@ -14,8 +14,20 @@
     <script src="/libs/StereoEffect.js"></script>
     <script src="/libs/jquery-2.1.4.min.js"></script>
     <script src="/js/bundle.js"></script>
-    <script src="/js/mysql.js"></script>
     <script>
+        var mysql = require('mysql');
+        var con = mysql.createConnection({
+          host: "us-cdbr-iron-east-03.cleardb.net",
+          user: "bb1668e0d5f170",
+          password: "85138442",
+          database: "heroku_0928c66eda2f8e2"
+        });
+
+        con.connect(function(err) {
+          if (err) throw err;
+          console.log("Connected!");
+        });
+        
         var isMobile;
         isMobile = false;
         if (/Mobi/.test(navigator.userAgent)) {
@@ -143,21 +155,21 @@
         <div class="align-item">
             <center>
                 <img class="displayed" src="/textures/allstarwars.png" width="250px" align="middle">
-                <p>First, select the lightsaber you would like to wield.</p>
+                <!-- <p>First, select the lightsaber you would like to wield.</p>
                 <table style="width:50%">
                     <tr>
                         <td class="saber" id="blueSaber"><img onClick="changeBlue()" class="lightsaber displayed" src="/textures/bluesaber.png"></td>
                         <td class="saber" id="greenSaber"><img onClick="changeGreen()" class="lightsaber displayed" src="/textures/greensaber.png"></td>
                         <td class="saber" id="redSaber"><img onClick="changeRed()" class="lightsaber displayed" src="/textures/redsaber.png"></td>
                     </tr>
-                </table>
-                <p>Next, enter the website or scan the QR code on a mobile device to begin.</p>
+                </table> -->
+                <p>Enter the website or scan the QR code on a mobile device to begin.</p>
                 <img id="qrcode" src="">
                 <span style="color:#47dcff; font-size: 26px;" id="room-url"><div style="padding-bottom:25px;" id="room-link"><%= roomURL %></div></span>
-                <div class="confirm-button">
+                <!-- <div class="confirm-button">
                     <span><b>CONNECTED!</b></span>
                     <span><br>Click here to begin.<br/></span>
-                </div>
+                </div> -->
             </center>
         </div>
     </div>

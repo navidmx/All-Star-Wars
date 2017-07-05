@@ -1,9 +1,5 @@
 //Makes score an integer
 var score = 0;
-//Modifies color of the lightsaber based on option clicked (default is blue)
-//also highlights the option selected, and dehighlights the rest
-lightsaberColor = "#00ffff";
-enemyColor = "#ff3346";
 var timer = 65;
 //Modifies color of the lightsaber based on option clicked (default is blue)
 //also highlights the option selected, and dehighlights the rest
@@ -164,7 +160,7 @@ function Sky(textureLoader){
 	
 	var skyGeometry = new THREE.SphereGeometry(10000, 10000, 25, 25);
 	var skyMaterial = new THREE.MeshBasicMaterial({
-		map: textureLoader.load('textures/floor_metal.jpg'),
+		map: textureLoader.load('textures/sky.jpg'),
 		side: THREE.BackSide});
 	var skyDome = new THREE.Mesh(skyGeometry, skyMaterial);
 	skyDome.rotateY(-Math.PI/2);
@@ -350,7 +346,7 @@ function init(){
                     $("#timertitle").fadeIn(500);
                     $("#introMessage").fadeOut(500);
                 } else if(timer == 0){
-                    // play outro message
+                    // play outro message at end of timer
                     playoutroMessage();
                 }
             }
@@ -551,7 +547,7 @@ Utils.checkCollision(lightsaber.children[0], "enemy", true, function(result){
 
 $(document).ready(function(){
 	$('.confirm-button').click(function(){
-		init()
+		init();
 		animate();
 	});
 });
@@ -569,6 +565,14 @@ socket.on('setupcomplete', function(data){
 	$('#room-link').hide();
 	$('#qrcode').hide();
 	socket.emit('viewready');
+});
+
+// initiates game
+
+socket.on('beginGame', function(data){
+    console.log("Game has Begun");
+    init();
+    animate();
 });
 
 socket.on('updateorientation', function(data){
