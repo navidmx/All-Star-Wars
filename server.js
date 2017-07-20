@@ -91,4 +91,8 @@ io.on('connection', function (socket) {
 		socket.broadcast.to(socket.room).emit('playsound', data);
 	});
 
+	socket.on('powerAttack_1', function(data){
+		socket.broadcast.to(socket.room).emit('init_powerAttack_1', data);
+	});
+
 });

@@ -25,6 +25,7 @@
             text-align: center;
             margin: 0;
             background-color: #000000;
+            overflow: hidden;
             font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
             font-weight: 300;
             color: white;
@@ -40,6 +41,9 @@
         th,
         td {
             border-collapse: collapse;
+        }
+        th,
+        td {
             padding: 15px;
         }
         a {
@@ -56,6 +60,12 @@
             background-color: black;
         }
         .confirm-button {
+            width: auto;
+            height: auto;
+            color: white;
+            background-color: #22c6ef;
+            display: none;
+            margin: 10px;
             width: 75%;
             color: white;
             border-radius: 10px;
@@ -88,25 +98,6 @@
             font-family: Poppins;
             font-size: 32px;
         }
-        .saber{
-            opacity: 0.5;
-            transition: opacity .5s;
-        }
-        .saber:hover{
-            opacity: 1;
-        }
-        #qrcode{
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-color: #22c6ef;
-            border-radius: 10px;
-            border-style: solid;
-        }
-        #room-url {
-        }
-        #room-url a {
-            text-decoration: none;
-        }
         #timer {
             position: absolute;
             left: 15%;
@@ -127,11 +118,6 @@
             right: 15%;
             top: 3%;
         }
-        .statbar {
-            z-index: 1;
-            position: absolute;
-            display: none;
-        }
         .saber{
             opacity: 0.5;
             transition: opacity .5s;
@@ -147,6 +133,7 @@
             border-style: solid;
         }
         #room-url {
+            font-size: 24px;
         }
         #room-url a {
             text-decoration: none;

@@ -1,5 +1,8 @@
 var socket = io();
 
+// stores default lightsaber color variable
+var lightsaberColor = {color: "#00ffff"}
+
 var alpha, beta, gamma;
 alpha = document.getElementById("alpha");
 beta = document.getElementById("beta");
@@ -71,13 +74,13 @@ function changeAudio(){
     }
 }
 
-function changeColor(){
-
-}  
+function changeColor(sabercolor){
+    lightsaberColor = {color: sabercolor}
+}
 
 // starts game 
 function startgame(){
-    socket.emit('startedGame');
+    socket.emit('startedGame', lightsaberColor);
     // displays main lightsaber on controller
     $('#center').fadeIn(500);
 
@@ -88,6 +91,12 @@ function startgame(){
 
 }
 
+// activiates powerAttack_1
+function powerAttack_1(){
+    socket.emit('powerAttack_1');
+    console.log("powerAttack_1 clicked");
+}
+
 socket.on('playsound', function(data){
-	// hitSounds[Math.floor(Math.random() * 3)].play();
+    // hitSounds[Math.floor(Math.random() * 3)].play();
 });

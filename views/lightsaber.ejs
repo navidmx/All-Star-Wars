@@ -87,7 +87,13 @@
         .confirm-button:hover {
             background-color: rgba(34, 198, 239, 0.68);
             cursor: pointer;
-        }  
+        }
+        .powerAttack {
+
+        }
+        #powerAttack_1 {
+            
+        }
 	</style>
 	</head>
 	<body>
@@ -98,15 +104,19 @@
                     <p>First, select the lightsaber you would like to wield.</p>
                     <table style="width:50%">
                         <tr>
-                            <td class="saber" id="blueSaber"><img onClick="changeBlue()" class="lightsaber displayed" src="/textures/bluesaber.png"></td>
-                            <td class="saber" id="greenSaber"><img onClick="changeGreen()" class="lightsaber displayed" src="/textures/greensaber.png"></td>
-                            <td class="saber" id="redSaber"><img onClick="changeRed()" class="lightsaber displayed" src="/textures/redsaber.png"></td>
+                            <td class="saber" id="blueSaber"><img onClick="changeColor('blue')" class="lightsaber displayed" src="/textures/bluesaber.png"></td>
+                            <td class="saber" id="greenSaber"><img onClick="changeColor('green')" class="lightsaber displayed" src="/textures/greensaber.png"></td>
+                            <td class="saber" id="redSaber"><img onClick="changeColor('red')" class="lightsaber displayed" src="/textures/redsaber.png"></td>
                         </tr>
                     </table>
-                <div class="confirm-button" onClick="startgame()">
-                    <span><b>CONNECTED!</b></span>
-                    <span><br>Click here to begin.<br/></span>
-                </div>
+                    <div class="confirm-button" onClick="startgame()">
+                        <span><b>CONNECTED!</b></span>
+                        <span><br>Click here to begin.<br/></span>
+                    </div>
+                    <!-- Temporary Placement for Debugging -->
+                    <div class="powerAttack"  id="powerAttack_1" onClick="powerAttack_1()">
+                        <span><b>Power Attack 1</b></span>
+                    </div>
                 </center>
             </div>
         </div>
