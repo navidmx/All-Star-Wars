@@ -356,8 +356,6 @@ function init(){
     //Hide the landing page, display timer and score
 	$('.landing').fadeOut(100);
 	$('.confirm-button').fadeOut(100);
-    $("#score").fadeIn(500);
-    $("#scoretitle").fadeIn(500);
     //Count down every second for timer
     setTimeout(function(){
         setInterval(function(){
@@ -369,6 +367,8 @@ function init(){
                 if (timer == 60){
                     $("#timer").fadeIn(500);
                     $("#timertitle").fadeIn(500);
+                    $("#score").fadeIn(500);
+                    $("#scoretitle").fadeIn(500);
                     $("#introMessage").fadeOut(500);
                 } else if(timer == 0){
                     // play outro message at end of timer
@@ -408,7 +408,8 @@ function setupScene(){
 	lightAngle.position.set(0,50,0);
 	scene.add(lightAngle);
 
-	// AXIS var axis = new THREE.AxisHelper(200);
+	// AXIS
+	var axis = new THREE.AxisHelper(200);
     // scene.add(axis);
     
     scene.add(hand);
@@ -430,8 +431,8 @@ function playintroMessage() {
 
 // Outro message function
 function playoutroMessage(){
-    $("#outroMessage").fadeIn(500);
-    $("#winMessage").html("You scored " + score + " points!");
+    $("#outroMessage").fadeIn(1000);
+    $(".gameView").fadeOut(1000);
 }
 
 function setupGame() {
