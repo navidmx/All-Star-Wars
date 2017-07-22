@@ -430,7 +430,7 @@ function playintroMessage() {
 
 // Outro message function
 function playoutroMessage(){
-    $("#container").fadeOut(1000);
+    $(".gameView").fadeOut(1000);
     $("#outroMessage").fadeIn(1000);
     $("#winMessage").html("You scored " + score + " points!");
 }
