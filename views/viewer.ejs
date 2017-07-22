@@ -16,27 +16,6 @@
     <script src="/libs/DeviceOrientationController.js"></script>
     <script src="/libs/OrbitControls.js"></script>
     <script src="/libs/StereoEffect.js"></script>
-    <script>
-        var mysql = require('mysql');
-        var con = mysql.createConnection({
-            host: "us-cdbr-iron-east-03.cleardb.net",
-            user: "bb1668e0d5f170",
-            password: "85138442",
-            database: "heroku_0928c66eda2f8e2"
-        });
-
-        con.connect(function(err) {
-            if (err) throw err;
-            console.log("Connected!");
-        });
-
-        var isMobile;
-        isMobile = false;
-        if (/Mobi/.test(navigator.userAgent)) {
-            isMobile = true;
-        }
-
-    </script>
 </head>
 
 <body>
@@ -67,16 +46,16 @@
                 <div id="introMessage" style="display: none">
                     <p class="message">May the force be with you!</p>
                 </div>
-                <div id="outroMessage" style="display: none">
-                    <p class="message">Game over!</p>
-                    <p id="winMessage" style="font-size: 36px"></p>
-                </div>
                 <h4 class="statbar" id="timertitle" style="left: 15%; top: 3%;">Timer</h4>
                 <p class="statbar" id="timer" style="left: 15%; top: 10%;">0</p>
                 <h4 class="statbar" id="scoretitle" style="right: 15%; top: 3%;">Score</h4>
                 <p class="statbar" id="score" style="right: 15%; top: 10%;">0</p>
             </div>
         </div>
+    </div>
+    <div id="outroMessage" style="display: none">
+        <p class="message">Game over!</p>
+        <p id="winMessage" style="font-size: 36px"></p>
     </div>
     <script>
         var qrimg = document.getElementById("room-link").innerHTML;

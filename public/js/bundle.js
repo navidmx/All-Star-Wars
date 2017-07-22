@@ -430,7 +430,8 @@ function playintroMessage() {
 
 // Outro message function
 function playoutroMessage(){
-    $("#outroMessage").fadeIn(500);
+    ($"#container").fadeOut(1000);
+    $("#outroMessage").fadeIn(1000);
     $("#winMessage").html("You scored " + score + " points!");
 }
 
