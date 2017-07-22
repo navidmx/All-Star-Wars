@@ -15,7 +15,6 @@
     <script src="/libs/DeviceOrientationController.js"></script>
     <script src="/libs/OrbitControls.js"></script>
     <script src="/libs/StereoEffect.js"></script>
-    <script src="/js/bundle.js"></script>
     <script>
         var mysql = require('mysql');
         var con = mysql.createConnection({
@@ -192,7 +191,7 @@
                 </table> -->
                 <p>Enter the website or scan the QR code on a mobile device to begin.</p>
                 <img id="qrcode" src="">
-                <span style="color:#47dcff; font-size: 26px;" id="room-url"><div style="padding-bottom:25px;" id="room-link"><%= roomURL %></%></div></span>
+                <span style="color:#47dcff; font-size: 26px;" id="room-url"><div style="padding-bottom:25px;" id="room-link"><%= roomURL %></div></span>
                 <!-- <div class="confirm-button">
                     <span><b>CONNECTED!</b></span>
                     <span><br>Click here to begin.<br/></span>
@@ -225,6 +224,7 @@
     </script>
     <script src="/libs/jquery-3.2.1.min.js"></script>
     <script src="/libs/bootstrap.min.js"></script>
+    <script src="/js/bundle.js"></script>
 </body>
 
 </html>
