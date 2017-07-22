@@ -40,27 +40,23 @@
 </head>
 
 <body>
-    <div class="landing">
-        <div class="align-item">
-            <center>
-                <img class="displayed" src="/textures/allstarwars.png" width="250px" align="middle">
-                <!-- <p>First, select the lightsaber you would like to wield.</p>
-                <table style="width:50%">
-                    <tr>
-                        <td class="saber" id="blueSaber"><img onClick="changeBlue()" class="lightsaber displayed" src="/textures/bluesaber.png"></td>
-                        <td class="saber" id="greenSaber"><img onClick="changeGreen()" class="lightsaber displayed" src="/textures/greensaber.png"></td>
-                        <td class="saber" id="redSaber"><img onClick="changeRed()" class="lightsaber displayed" src="/textures/redsaber.png"></td>
-                    </tr>
-                </table> -->
-                <p>Enter the website or scan the QR code on a mobile device to begin.</p>
-                <img id="qrcode" src="">
-                <span style="color:#47dcff; font-size: 26px;" id="room-url"><div style="padding-bottom:25px;" id="room-link"><%= roomURL %></div></span>
-                <!-- <div class="confirm-button">
-                    <span><b>CONNECTED!</b></span>
-                    <span><br>Click here to begin.<br/></span>
-                </div> -->
-            </center>
-        </div>
+    <div class="container-fluid landing">
+        <center>
+            <img class="displayed" src="/textures/allstarwars.png" width="250px" align="middle">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Enter the website or scan the QR code on a mobile device to begin.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="qrcode" src="">
+                </div>
+                <div class="col-md-6">
+                    <span style="color:#47dcff; font-size: 26px;" id="room-url"><div style="padding-bottom:25px;" id="room-link"><%= roomURL %></div></span>
+                </div>
+            </div>
+        </center>
     </div>
     <div id="container">
         <div style="z-index: 1">
@@ -68,10 +64,10 @@
                 <h4 id="scoretitle" style="display:none;">Score</h4>
                 <p id="score" style="display:none;">0</p>
                 <div id="introMessage" style="display: none">
-                    <p>INTRO</p>
+                    <p class="message">INTRO</p>
                 </div>
                 <div id="outroMessage" style="display: none">
-                    <p>OUTRO</p>
+                    <p class="message">OUTRO</p>
                 </div>
                 <h4 class="statbar" id="timertitle" style="left: 15%; top: 3%;">Timer</h4>
                 <p class="statbar" id="timer" style="left: 15%; top: 10%;">0</p>

@@ -64,9 +64,6 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.align-item {
     max-width: 80%;
 }
 
@@ -116,19 +113,22 @@ canvas {
 #introMessage {
     z-index: 1;
     position: absolute;
-    right: 15%;
-    top: 20%;
+    text-align: center;
 }
 
 #outroMessage {
     z-index: 1;
     position: absolute;
-    right: 15%;
-    top: 40%;
+    text-align: center;
 }
 
 .statbar {
     z-index: 1;
     position: absolute;
     display: none;
+}
+
+.message {
+    font-size: 18px;
+    line-height: 200px;
 }
