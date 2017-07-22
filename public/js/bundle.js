@@ -1,3 +1,7 @@
+if (/Mobi/.test(navigator.userAgent)) {
+    var isMobile = true;
+}
+
 // Makes score an integer
 var score = 0;
 var timer = 65;
