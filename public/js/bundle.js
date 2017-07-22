@@ -408,8 +408,7 @@ function setupScene(){
 	lightAngle.position.set(0,50,0);
 	scene.add(lightAngle);
 
-	// AXIS 
-	var axis = new THREE.AxisHelper(200);
+	// AXIS var axis = new THREE.AxisHelper(200);
     // scene.add(axis);
     
     scene.add(hand);

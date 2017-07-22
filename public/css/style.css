@@ -114,12 +114,16 @@ canvas {
     z-index: 1;
     position: absolute;
     text-align: center;
+    width: 100%;
+    margin-top: 45vh;
 }
 
 #outroMessage {
     z-index: 1;
     position: absolute;
     text-align: center;
+    width: 100%;
+    margin-top: 40vh;
 }
 
 .statbar {
@@ -129,6 +133,5 @@ canvas {
 }
 
 .message {
-    font-size: 18px;
-    line-height: 200px;
+    font-size: 60px;
 }
